@@ -359,7 +359,7 @@ class TrainerChoice(autoPyTorchChoice):
             numerical_columns=X['dataset_properties']['numerical_columns'] if 'numerical_columns' in X[
                 'dataset_properties'] else None,
             func_eval_time_limit_secs=X['func_eval_time_limit_secs'],
-            start_time=X['start_time']
+            start_time=X.get('start_time', None)
         )
         total_parameter_count, trainable_parameter_count = self.count_parameters(X['network'])
         self.run_summary = RunSummary(
