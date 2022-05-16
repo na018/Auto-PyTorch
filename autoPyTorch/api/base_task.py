@@ -1800,7 +1800,7 @@ class BaseTask(ABC):
 
         budget = budget if budget is not None else pipeline_options[budget_type]
 
-        self.pipeline_options['func_eval_time_limit_secs'] = run_time_limit_secs
+        pipeline_options['func_eval_time_limit_secs'] = run_time_limit_secs
 
         if disable_file_output is None:
             disable_file_output = getattr(self, '_disable_file_output', [])
